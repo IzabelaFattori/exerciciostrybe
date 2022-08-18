@@ -4,4 +4,28 @@
 //Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
 //Exemplo: bishop (bispo) -> diagonals (diagonais)
 
-let p1 = 
+let p = "Rainha".toLowerCase();
+
+switch(p){
+    case "cavalo":
+        console.log('Os cavalos se movem em forma de L: dois quadrados na direção horizontal ou vertical e, a seguir, mova um quadrado horizontal ou verticalmente.'); 
+        break;
+    case "bispo":
+        console.log('Os Bispos se movem diagonalmente, qualquer número de quadrados.');
+        break;
+    case "peao":
+        console.log('Os peões se movem verticalmente para frente um quadrado, tendo a opção de se moverem dois se eles ainda nao se moveram.');
+        break;
+    case "torre":
+        console.log ('As torres se movem horizontalmente ou verticalmente qualquer número de quadrados.');
+        break;
+    case "rainha":
+        console.log('Rainhas se movem diagonalmente, horizontalmente ou verticalmente qualquer número de quadrados.');
+        break;
+    case "rei":
+        console.log('Movimento de reis uma casa em qualquer direção, desde que essa casa não seja atacada por uma peça inimiga.');
+        break;
+    default:
+        console.log('Peça Inválida');
+    }
+    
