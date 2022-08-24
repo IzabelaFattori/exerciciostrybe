@@ -21,4 +21,6 @@ let segundolivro = {
 
 leitor.livrosFavoritos.push(segundolivro);
 
-console.log('Julia tem ' + leitor.livrosFavoritos + 'livros favoritos.')
+let qntDeLivros = leitor.livrosFavoritos.length
+
+console.log('Julia tem ' + qntDeLivros + ' livros favoritos.')
