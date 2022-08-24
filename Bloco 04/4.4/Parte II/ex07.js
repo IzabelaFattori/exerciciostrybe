@@ -5,3 +5,14 @@
 //Retorno esperado: true
 //verificaFimPalavra('joaofernando', 'fernan');
 //Retorno esperado: false
+
+function verificacao () {
+    let word = 'trybe'
+    let ending = 'be'
+    if(word.length < ending.length){
+        console.log('ERROR')
+    }
+
+}
+
+verificacao()
