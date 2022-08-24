@@ -13,4 +13,6 @@ let leitor = {
     ],
   };
 
-    console.log('O livro favorito de ' + leitor.nome + leitor.sobrenome + 'se chama ' + leitor.livrosFavoritos.titulo)
+  let nomeDoLivro = leitor.livrosFavoritos[0];
+  
+  console.log('O livro favorito de ' + leitor.nome + ' ' +  leitor.sobrenome + ' se chama ' + nomeDoLivro['titulo'])
