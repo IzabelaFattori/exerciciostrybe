@@ -4,14 +4,14 @@ services:
     build: frontend/ # Especificamos o contexto, ou seja, a pasta onde está o Dockerfile.
     restart: on-failure # Especificamos que o container deve ser reiniciado caso ele falhe.
     ports:   
-      - "3000:3000" # Especificamos a porta que será exposta.
+      - 3000:3000 # Especificamos a porta que será exposta.
     depends_on: # Especificamos que o container frontend depende do container backend.
       - backend
   backend:
     build: backend/    # Especificamos o contexto, ou seja, a pasta onde está o Dockerfile.
     restart: on-failure # Especificamos que o container deve ser reiniciado caso ele falhe.
     ports:   
-      - "3001:3001" # Especificamos a porta que será exposta.
+      - 3001:3001 # Especificamos a porta que será exposta.
     environment:
       - DB_HOST=database # Especificamos a variável de ambiente DB_HOST.
     depends_on: # Especificamos que o container backend depende do container database.
