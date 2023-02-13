@@ -7,6 +7,10 @@ services:
       - 3000:3000 # Especificamos a porta que será exposta.
     depends_on: # Especificamos que o container frontend depende do container backend.
       - backend
+    volumes:    # caminho no computador : caminho no container
+      - ./logs:/var/log/frontend
+    networks:
+      - rede-virtual-1
   backend:
     build: backend/    # Especificamos o contexto, ou seja, a pasta onde está o Dockerfile.
     restart: on-failure # Especificamos que o container deve ser reiniciado caso ele falhe.
@@ -16,6 +20,20 @@ services:
       - DB_HOST=database # Especificamos a variável de ambiente DB_HOST.
     depends_on: # Especificamos que o container backend depende do container database.
       - database
+    networks:
+      - rede-virtual-1
+      - rede-virtual-2
   database:
     image: betrybe/docker-compose-example-database:v1    # Especificamos a Imagem Docker diretamente.
     restart: on-failure # Especificamos que o container deve ser reiniciado caso ele falhe.
+    volumes:
+      - dados-do-banco:/data/db  # Especificamos o volume que será criado. # nome do disco virtual : caminho no container
+    networks:
+      - rede-virtual-2
+
+volumes:  # Especificamos os volumes que serão criados.
+  dados-do-banco:  # Especificamos o nome do volume.
+
+networks:
+  rede-virtual-1:
+  rede-virtual-2:
